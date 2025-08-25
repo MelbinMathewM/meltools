@@ -67,7 +67,7 @@ export default function QRCodeMain() {
             <div className="flex flex-col md:flex-row gap-2 items-center mb-4">
                 <input
                     type="text"
-                    placeholder="Eg: https://yourdomain.com"
+                    placeholder="Eg: https://www.yourdomain.com"
                     value={url}
                     onChange={(e) => {
                         setUrl(e.target.value);
@@ -81,8 +81,9 @@ export default function QRCodeMain() {
                 />
                 <button
                     onClick={generateQR}
+                    disabled={url === ""}
                     className="flex items-center cursor-pointer text-md gap-2 px-4 py-2.5 bg-purple-600 text-white font-medium rounded-md shadow-lg 
-                               hover:bg-purple-700 transform hover:scale-105 transition"
+                               hover:bg-purple-700 disabled:bg-purple-300 transform hover:scale-105 transition"
                 >
                     Generate QR
                 </button>
